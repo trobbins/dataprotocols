@@ -6,9 +6,9 @@ Introduction
 ============
 
 Data are usually stored in systems like an RDBMS (relational database management system),
- a NoSQL-cluster or a triple-store. When applications are developed on top of these systems,
+a NoSQL-cluster or a triple-store. When applications are developed on top of these systems,
 developers need a tool for retrieving data segments by sending the system relevant questions,
- called queries. Common query languages are SQL, SPARQL or NoSQL hash-maps (?).
+called queries. Common query languages are SQL, SPARQL or NoSQL hash-maps (?).
 
 Companies and organisations are moving fast towards a (Linked) Open Data 
 policy. This new envelopment affects how people use data. As the data owners will not push
@@ -17,7 +17,7 @@ the data will have to be accessed over a transfer protocol, most commonly HTTP, 
 were webpages identified by URIs.
 
 In the past, many HTTP web-services have tried to mimic the idea of RDBMS or triple-stores
- by allowing SQL/SPARQL queries to be sent inside a HTTP message body or encoded inside 
+by allowing SQL/SPARQL queries to be sent inside a HTTP message body or encoded inside 
 the URL. Others have tried to define their own query protocol, although they weren't always 
 aware of this, by extending their web-service with extra flags and filters.
 
@@ -31,14 +31,13 @@ The kind of use cases that might benefit from a query protocol are:
 In the rest of this document, all possible use cases are called applications. After discussing 
 the term data query and after discussing why we need a protocol and not a language,  a proposal 
 will be made. At the end of this document, existing work will be discussed taking some  predefined
- criteria into account.
-
+criteria into account.
 
 Different aspects of querying data (Or: Defining the term data query protocol)
 ==============================================================================
 
 Before diving deeper into a proposal and existing work, this chapter will discuss various
- aspects of querying data over HTTP. It gives an answer to why a protocol is needed and 
+aspects of querying data over HTTP. It gives an answer to why a protocol is needed and 
 not just a query language.
 
 Querying
@@ -89,12 +88,11 @@ The Semantic Web has been the subject of academic research for several years. RD
 are used to store data in triple-stores. A triple is a series of 3 URIs which identify an 
 object, a predicate and a subject.
 
-Example:
+  subject       predict     object
 
-::
-  subject predict object
   <http://...> <http:///> <http:///>
-  <http://...> is schema:...
+
+  <http://...>   is        schema:...
 
 
 
@@ -261,7 +259,7 @@ or visualisation.
 
 For example:
 
- http://data.irail.be/spectql/Airports/Liveboard/LCY/2012/03/04/12/00/departures{iso8601,delay-,direction}:csv
+* http://data.irail.be/spectql/Airports/Liveboard/LCY/2012/03/04/12/00/departures{iso8601,delay-,direction}:csv
 
 Selects the time, delay and direction of planes leaving at the airport of London. Sorted by delay (DESC) 
 and with CSV as the output format.
