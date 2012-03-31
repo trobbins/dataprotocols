@@ -8,10 +8,10 @@ Introduction
 Data are usually stored in systems like an RDBMS (relational database management system),
 a NoSQL-cluster or a triple-store. When applications are developed on top of these systems,
 developers need a tool for retrieving data segments by sending the system relevant questions,
-called queries. Common query languages are SQL, SPARQL or NoSQL hash-maps (?).
+called queries. Common query languages are SQL, SPARQL or NoSQL's UnQL.
 
 Companies and organisations are moving fast towards a (Linked) Open Data 
-policy. This new envelopment affects how people use data. As the data owners will not push
+policy. This new development affects how people use data. As the data owners will not push
 the data to the data consumers' databases, but the data consumers will pull the data from the data owner,
 the data will have to be accessed over a transfer protocol, most commonly HTTP, as if the data
 were webpages identified by URIs.
@@ -28,17 +28,28 @@ The kind of use cases that might benefit from a query protocol are:
 * Crowd sourcing tools augmenting information dynamically pulled from a data
   catalogue.
 
-In the rest of this document, all possible use cases are called applications. After discussing 
-the term data query and after discussing why we need a protocol and not a language,  a proposal 
+In the rest of this document, all possible use cases are called applications. After discussing
+"data querying" and after discussing why we need a protocol and not a language,  a proposal 
 will be made. At the end of this document, existing work will be discussed taking some  predefined
 criteria into account.
 
-Different aspects of querying data (Or: Defining the term data query protocol)
-==============================================================================
+Different aspects of querying data
+==================================
 
 Before diving deeper into a proposal and existing work, this chapter will discuss various
-aspects of querying data over HTTP. It gives an answer to why a protocol is needed and 
+aspects of querying data over HTTP. It provides an answer to why a protocol is needed and 
 not just a query language.
+
+.. image: img/datatoinformation.png
+
+Figure 1: Image describing nomenclature
+
+Service Oriented Architecture
+-----------------------------
+
+A Service Oriented Architecture (SOA) is a software architecture for data driven applications. The
+biggest pool of data at the top of figure one can embody different things: it can be a triple-store,
+a NoSQL cluster, the Internet in general or others. The datapool can be indexed 
 
 Querying
 --------
@@ -61,7 +72,7 @@ Identifying resources
 
 A first question that needs to be brought forward is how the dataset that is going to be
 manipulated is identified. Many languages, such as SQL, identify a dataset using a
-simple name. Other languages, such as SPARQL, identify a dataset using URIs.
+simple database and table name. Other languages, such as SPARQL, identify a dataset using URIs.
 
 When URIs are chosen to identify resources, the data query protocol might also choose to embrace
 the RESTful principles. It can become an extra layer upon REST (these protocols usually
