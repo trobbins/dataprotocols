@@ -2,7 +2,7 @@
 Welcome to Open Data Protocols
 ==============================
 
-This site is a the home of **simple protocols and formats for working with open
+This site is a home for **simple protocols and formats for working with open
 data**. Our mission is both to make it **easier to develop tools and services for
 working with data**, and, to ensure **greater interoperability between new and
 existing tools and services**.
